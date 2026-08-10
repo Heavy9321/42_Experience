@@ -1,35 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                       :::      ::::::::    */
-/*   ft_putnbr_fd.c                                    :+:      :+:    :+:    */
+/*   ft_putendl_fd.c                                   :+:      :+:    :+:    */
 /*                                                   +:+ +:+         +:+      */
 /*   By: kasen <kasen@student.42istanbul.com.tr>   #+#  +:+       +#+         */
 /*                                               +#+#+#+#+#+   +#+            */
-/*   Created: 2026/08/10 15:10:06 by kasen            #+#    #+#              */
-/*   Updated: 2026/08/10 15:29:39 by kasen           ###   ########.fr        */
+/*   Created: 2026/08/10 15:31:33 by kasen            #+#    #+#              */
+/*   Updated: 2026/08/10 15:37:02 by kasen           ###   ########.fr        */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putnbr_fd(int n, int fd)
+void	ft_putendl_fd(char *s, int fd)
 {
-	if (n == -2147483648)
-	{
-		write(1, "-2147483648", 11);
-	}
-	else
-	{
-		if (n < 0)
-		{
-			write(1, "-", 1);
-			n = -n;
-		}
-		if (n >= 10)
-		{
-			ft_putnbr(n / 10);
-		}
-		n = n % 10 + '0';
-		write(fd, &n, 1);
-	}
+	if (!s)
+		return (NULL);
+	ft_putstr_fd(*s, fd);
+	write(fd, "\n", 1);
 }

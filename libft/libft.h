@@ -6,7 +6,7 @@
 /*   By: kasen <kasen@student.42istanbul.com.tr>   #+#  +:+       +#+         */
 /*                                               +#+#+#+#+#+   +#+            */
 /*   Created: 2026/08/05 16:42:56 by kasen            #+#    #+#              */
-/*   Updated: 2026/08/10 15:14:19 by kasen           ###   ########.fr        */
+/*   Updated: 2026/08/10 15:31:05 by kasen           ###   ########.fr        */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,5 +47,7 @@ char	*ft_strdup(const char *s1);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
 void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *s, int fd);
+void	ft_putnbr_fd(int n, int fd);
+void	ft_putendl_fd(char *s, int fd);
 
 #endif
