@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: kasen <kasen@student.42istanbul.com.tr>    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/08/05 16:42:56 by kasen             #+#    #+#             */
-/*   Updated: 2026/08/10 14:29:27 by kasen            ###   ########.fr       */
+/*                                                       :::      ::::::::    */
+/*   libft.h                                           :+:      :+:    :+:    */
+/*                                                   +:+ +:+         +:+      */
+/*   By: kasen <kasen@student.42istanbul.com.tr>   #+#  +:+       +#+         */
+/*                                               +#+#+#+#+#+   +#+            */
+/*   Created: 2026/08/05 16:42:56 by kasen            #+#    #+#              */
+/*   Updated: 2026/08/10 15:14:19 by kasen           ###   ########.fr        */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,5 +45,7 @@ void	ft_bzero(void *s, size_t n);
 int		ft_atoi(const char *str);
 char	*ft_strdup(const char *s1);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
+void	ft_putchar_fd(char c, int fd);
+void	ft_putstr_fd(char *s, int fd);
 
 #endif
