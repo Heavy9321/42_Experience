@@ -1,26 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sqrt.c                                          :+:      :+:    :+:   */
+/*   ft_isalpha.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kaansen <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: kasen <kasen@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/07/16 15:23:37 by kaansen           #+#    #+#             */
-/*   Updated: 2026/07/16 15:24:56 by kaansen          ###   ########.fr       */
+/*   Created: 2026/08/03 18:45:36 by kasen             #+#    #+#             */
+/*   Updated: 2026/08/10 14:22:49 by kasen            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_sqrt(int nb)
-{
-	long	i;
+#include "libft.h"
 
-	i = 0;
-	if (nb <= 0)
-		return (0);
-	while (i * i < nb)
-		i++;
-	if (i * i == nb)
-		return (i);
-	else
-		return (0);
+int	ft_isalpha(int c)
+{
+	if ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'))
+	{
+		return (1);
+	}
+	return (0);
 }

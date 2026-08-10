@@ -1,35 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kaansen <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: kasen <kasen@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/07/02 22:24:20 by kaansen           #+#    #+#             */
-/*   Updated: 2026/07/02 22:42:31 by kaansen          ###   ########.fr       */
+/*   Created: 2026/08/05 16:54:12 by kasen             #+#    #+#             */
+/*   Updated: 2026/08/10 14:22:32 by kasen            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include "libft.h"
 
-int	ft_strlen(char *str)
+int	strncmp(const char *s1, const char *s2, size_t n)
 {
-	int	b;
+	size_t	a;
 
-	b = 0;
-	while (str[b] != '\0')
+	a = 0;
+	if (n == 0)
 	{
-		b++;
+		return (0);
 	}
-	return(b);
-}
-
-int main()
-{
-	char *str = "hello";
-
-	int s;
-
-	s = ft_strlen(str);
-	printf("String %s\nLength %d\n", str, s);
+	while (s1[a] == s2[a] && a < n - 1 && s1[a] != '\0')
+		a++;
+	return (s1[a] - s2[a]);
 }

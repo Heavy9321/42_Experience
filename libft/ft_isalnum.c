@@ -1,34 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_find_next_prime.c                               :+:      :+:    :+:   */
+/*   ft_isalnum.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kaansen <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: kasen <kasen@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/07/16 15:09:24 by kaansen           #+#    #+#             */
-/*   Updated: 2026/07/20 23:52:30 by kaansen          ###   ########.fr       */
+/*   Created: 2026/08/03 18:49:50 by kasen             #+#    #+#             */
+/*   Updated: 2026/08/05 16:53:37 by kasen            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_is_prime(int nb)
-{
-	int	i;
+#include "libft.h"
 
-	if (nb <= 1)
-		return (0);
-	i = 2;
-	while (i <= nb / i)
+int	ft_isalnum(int c)
+{
+	if (((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'))
+			|| (c >= '0' && c <= '9'))
 	{
-		if (nb % i == 0)
-			return(0);
-		i++;
+		return (1);
 	}
-	return (1);
-}
-
-int ft_find_next_prime(int nb)
-{
-	while (ft_is_prime(nb) == 0)
-		nb++;
-	return (nb);
+	return (0);
 }

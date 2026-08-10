@@ -1,31 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   maff_alpha.c                                       :+:      :+:    :+:   */
+/*   ft_isdigit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kaansen <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: kasen <kasen@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/07/03 12:13:25 by kaansen           #+#    #+#             */
-/*   Updated: 2026/07/03 12:19:09 by kaansen          ###   ########.fr       */
+/*   Created: 2026/08/03 18:46:11 by kasen             #+#    #+#             */
+/*   Updated: 2026/08/10 14:22:47 by kasen            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "libft.h"
 
-int main(void)
+int	ft_isdigit(int c)
 {
-	char	upper;
-	char	down;
-
-	upper = 'B';
-	down = 'a';
-	while(upper <= 'Z')
+	if (c >= '0' && c <= '9')
 	{
-		write(1, &down, 1);
-		write(1, &upper, 1);
-		down += 2;
-		upper += 2;
+		return (1);
 	}
-	write(1, "\n", 1);
-	return(0);
+	return (0);
 }

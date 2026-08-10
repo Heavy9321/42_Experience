@@ -1,30 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_countdown.c                                     :+:      :+:    :+:   */
+/*   ft_isascii.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kaansen <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: kasen <kasen@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/07/03 11:55:31 by kaansen           #+#    #+#             */
-/*   Updated: 2026/07/03 12:04:43 by kaansen          ###   ########.fr       */
+/*   Created: 2026/08/03 18:52:26 by kasen             #+#    #+#             */
+/*   Updated: 2026/08/10 14:22:48 by kasen            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "libft.h"
 
-int	ft_countdown(char b)
+int	ft_isascii(int c)
 {
-	b = '9';
-	while(b >= '0')
+	if (c >= 0 && c <= 127)
 	{
-		write(1, &b, 1);
-		b--;
+		return (1);
 	}
-	write(1, "\n", 1);
-	return(b);
-}
-
-int main()
-{
-	ft_countdown('b');
+	return (0);
 }
