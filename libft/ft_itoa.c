@@ -1,36 +1,61 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kasen <kasen@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/08/10 14:31:13 by kasen             #+#    #+#             */
-/*   Updated: 2026/08/13 03:43:59 by kasen            ###   ########.fr       */
+/*   Created: 2026/08/15 19:23:54 by kasen             #+#    #+#             */
+/*   Updated: 2026/08/16 18:55:23 by kasen            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+static unsigned int	length(long b)
 {
-	char			*alloc;
-	unsigned int	s_len;
-	char			*str;
+	int	c;
 
-	str = (char *) s;
-	alloc = (char *) malloc((len + 1) * sizeof(char));
-	if (!s)
-		return (NULL);
-	s_len = ft_strlen(s);
-	if (start >= s_len)
+	c = 0;
+	if (b < 0)
 	{
-		len = 0;
-		alloc = malloc(len + 1);
-		return (ft_strdup(""));
+		c++;
+		b = -b;
 	}
-	if (len > s_len - start)
-		len = s_len - start;
-	ft_strlcpy(alloc, str + start, s_len + 1);
+	else if (b == 0)
+		return (1);
+	while (b > 0)
+	{
+		c++;
+		b = (b / 10);
+	}
+	return (c);
+}
+
+char	*ft_itoa(int n)
+{
+	long	i;
+	int		len;
+	char	*alloc;
+
+	i = n;
+	len = length(i);
+	alloc = (char *) malloc((len + 1) * sizeof(char));
+	if (!alloc)
+		return (NULL);
+	alloc[len] = '\0';
+	if ((i < 0))
+	{
+		alloc[0] = '-';
+		i = -i;
+	}
+	if (i == 0)
+		alloc[0] = '0';
+	while (i > 0)
+	{
+		alloc[len - 1] = (i % 10) + '0';
+		i = i / 10;
+		len--;
+	}
 	return (alloc);
 }

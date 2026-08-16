@@ -1,16 +1,15 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: kasen <kasen@student.42istanbul.com.tr>    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/08/10 14:22:43 by kasen             #+#    #+#             */
-/*   Updated: 2026/08/10 14:22:43 by kasen            ###   ########.fr       */
+/*                                                       :::      ::::::::    */
+/*   ft_memcpy.c                                       :+:      :+:    :+:    */
+/*                                                   +:+ +:+         +:+      */
+/*   By: kasen <kasen@student.42istanbul.com.tr>   #+#  +:+       +#+         */
+/*                                               +#+#+#+#+#+   +#+            */
+/*   Created: 2026/08/10 14:22:43 by kasen            #+#    #+#              */
+/*   Updated: 2026/08/11 18:28:12 by kasen           ###   ########.fr        */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
 #include "libft.h"
 
 void	*ft_memcpy(void *restrict dst, const void *restrict src, size_t n)

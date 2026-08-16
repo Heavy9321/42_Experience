@@ -1,16 +1,15 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: kasen <kasen@student.42istanbul.com.tr>    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/08/10 14:22:38 by kasen             #+#    #+#             */
-/*   Updated: 2026/08/10 14:22:38 by kasen            ###   ########.fr       */
+/*                                                       :::      ::::::::    */
+/*   ft_strlcat.c                                      :+:      :+:    :+:    */
+/*                                                   +:+ +:+         +:+      */
+/*   By: kasen <kasen@student.42istanbul.com.tr>   #+#  +:+       +#+         */
+/*                                               +#+#+#+#+#+   +#+            */
+/*   Created: 2026/08/10 14:22:38 by kasen            #+#    #+#              */
+/*   Updated: 2026/08/11 15:42:55 by kasen           ###   ########.fr        */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
 #include "libft.h"
 
 size_t	ft_strlcat(char *restrict dst, const char *restrict src, size_t dstsize)

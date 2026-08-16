@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: kasen <kasen@student.42istanbul.com.tr>    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/08/10 14:22:24 by kasen             #+#    #+#             */
-/*   Updated: 2026/08/10 14:22:29 by kasen            ###   ########.fr       */
+/*                                                       :::      ::::::::    */
+/*   ft_strnstr.c                                      :+:      :+:    :+:    */
+/*                                                   +:+ +:+         +:+      */
+/*   By: kasen <kasen@student.42istanbul.com.tr>   #+#  +:+       +#+         */
+/*                                               +#+#+#+#+#+   +#+            */
+/*   Created: 2026/08/10 14:22:24 by kasen            #+#    #+#              */
+/*   Updated: 2026/08/10 17:04:15 by kasen           ###   ########.fr        */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include "libft.h"
 
-char	*strnstr(const char *haystack, const char *needle, size_t len)
+char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
 	unsigned int	h;
 	unsigned int	n;

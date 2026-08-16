@@ -6,11 +6,11 @@
 /*   By: kasen <kasen@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/10 14:22:41 by kasen             #+#    #+#             */
-/*   Updated: 2026/08/10 14:22:41 by kasen            ###   ########.fr       */
+/*   Updated: 2026/08/12 23:36:15 by kasen            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include "libft.h"
 
 void	*ft_memset(void *b, int c, size_t len)
 {

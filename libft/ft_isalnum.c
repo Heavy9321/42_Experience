@@ -6,7 +6,7 @@
 /*   By: kasen <kasen@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/03 18:49:50 by kasen             #+#    #+#             */
-/*   Updated: 2026/08/05 16:53:37 by kasen            ###   ########.fr       */
+/*   Updated: 2026/08/14 06:04:47 by kasen            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,5 @@
 
 int	ft_isalnum(int c)
 {
-	if (((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'))
-			|| (c >= '0' && c <= '9'))
-	{
-		return (1);
-	}
-	return (0);
+	return (ft_isalpha(c) || ft_isdigit(c));
 }
