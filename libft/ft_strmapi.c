@@ -6,7 +6,7 @@
 /*   By: kasen <kasen@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/13 03:47:12 by kasen             #+#    #+#             */
-/*   Updated: 2026/08/15 19:23:31 by kasen            ###   ########.fr       */
+/*   Updated: 2026/08/20 19:56:09 by kasen            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 		return (NULL);
 	while (s[i] != '\0')
 	{
-		alloc[i] = f(s, s[i]);
+		alloc[i] = f(i, s[i]);
 		i++;
 	}
 	alloc[i] = '\0';

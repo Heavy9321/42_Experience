@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                       :::      ::::::::    */
-/*   ft_strnstr.c                                      :+:      :+:    :+:    */
-/*                                                   +:+ +:+         +:+      */
-/*   By: kasen <kasen@student.42istanbul.com.tr>   #+#  +:+       +#+         */
-/*                                               +#+#+#+#+#+   +#+            */
-/*   Created: 2026/08/10 14:22:24 by kasen            #+#    #+#              */
-/*   Updated: 2026/08/10 17:04:15 by kasen           ###   ########.fr        */
+/*                                                        :::      ::::::::   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: kasen <kasen@student.42istanbul.com.tr>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/08/10 14:22:24 by kasen             #+#    #+#             */
+/*   Updated: 2026/08/20 20:07:16 by kasen            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	unsigned int	n;
 
 	h = 0;
-	if (*needle == '\0' && len > 0)
+	if (needle == NULL && len > 0)
 		return ((char *) haystack);
 	while (haystack[h] != '\0')
 	{
