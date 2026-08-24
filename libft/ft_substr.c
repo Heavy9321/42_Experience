@@ -6,7 +6,7 @@
 /*   By: kasen <kasen@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/10 14:31:13 by kasen             #+#    #+#             */
-/*   Updated: 2026/08/18 23:24:41 by kasen            ###   ########.fr       */
+/*   Updated: 2026/08/21 19:51:20 by kasen            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,23 +14,35 @@
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	char			*alloc;
-	unsigned int	s_len;
-	char			*str;
+	char	*alloc;
+	size_t	str_len;
+	size_t	i;
 
-	str = (char *) s;
-	alloc = (char *) malloc((len + 1) * sizeof(char));
 	if (!s)
 		return (NULL);
-	s_len = ft_strlen(s);
-	if (start >= s_len)
-	{
-		len = 0;
-		alloc = malloc(len + 1);
+	str_len = ft_strlen(s);
+	if (start >= str_len)
 		return (ft_strdup(""));
+	if (len > str_len - start)
+		len = str_len - start;
+	alloc = malloc((len + 1) * sizeof(char));
+	if (!alloc)
+		return (NULL);
+	i = 0;
+	while (i < len && s[start + i] != '\0')
+	{
+		alloc[i] = s[start + i];
+		i++;
 	}
-	if (len > s_len - start)
-		len = s_len - start;
-	ft_strlcpy(alloc, str + start, s_len + 1);
+	alloc[i] = '\0';
 	return (alloc);
 }
+// #include "stdio.h"
+
+// int	main(void)
+// {
+// 	char	*s;
+
+// 	s = ft_substr("tripouille", 1, 1);
+// 	printf("%s", s);
+// }

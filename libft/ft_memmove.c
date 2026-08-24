@@ -6,7 +6,7 @@
 /*   By: kasen <kasen@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/10 14:22:43 by kasen             #+#    #+#             */
-/*   Updated: 2026/08/10 14:30:47 by kasen            ###   ########.fr       */
+/*   Updated: 2026/08/24 15:50:52 by kasen            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,13 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	if (!dst && !src)
 		return (NULL);
 	if (s1 > s2)
+	{
 		while (len > 0)
 		{
 			len--;
 			s1[len] = s2[len];
 		}
+	}
 	else
 		ft_memcpy(s1, s2, len);
 	return (dst);

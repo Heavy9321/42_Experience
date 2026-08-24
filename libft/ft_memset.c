@@ -6,7 +6,7 @@
 /*   By: kasen <kasen@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/10 14:22:41 by kasen             #+#    #+#             */
-/*   Updated: 2026/08/12 23:36:15 by kasen            ###   ########.fr       */
+/*   Updated: 2026/08/21 09:07:19 by kasen            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	*ft_memset(void *b, int c, size_t len)
 {
 	unsigned char	*ptr;
-	unsigned int	i;
+	size_t			i;
 
 	ptr = (unsigned char *) b;
 	i = 0;
