@@ -16,13 +16,12 @@ SRCS = ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_toupper.c ft_tolower.c \
 
 OBJS = $(SRCS:.c=.o)
 
-all = $(NAME)
+all: $(NAME)
 
 $(NAME): $(OBJS)
 	$(AR) $(NAME) $(OBJS)
 
-%.o: %.c 
-	$(CC) $(CFLAGS) -c $< -o $@
+
 
 clean:
 	$(RM) $(OBJS)
