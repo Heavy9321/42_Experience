@@ -6,7 +6,7 @@
 /*   By: kasen <kasen@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/15 19:23:54 by kasen             #+#    #+#             */
-/*   Updated: 2026/08/16 18:55:23 by kasen            ###   ########.fr       */
+/*   Updated: 2026/08/29 00:31:35 by kasen            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ char	*ft_itoa(int n)
 
 	i = n;
 	len = length(i);
-	alloc = (char *) malloc((len + 1) * sizeof(char));
+	alloc = malloc((len + 1) * sizeof(char));
 	if (!alloc)
 		return (NULL);
 	alloc[len] = '\0';

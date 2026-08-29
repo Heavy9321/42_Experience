@@ -6,7 +6,7 @@
 /*   By: kasen <kasen@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/10 14:22:37 by kasen             #+#    #+#             */
-/*   Updated: 2026/08/20 20:00:05 by kasen            ###   ########.fr       */
+/*   Updated: 2026/08/26 16:00:16 by kasen            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 	size_t	i;
 	size_t	src_len;
 
+	if (!dst || !src)
+		return (0);
 	i = 0;
 	src_len = ft_strlen(src);
 	if (dstsize != 0)

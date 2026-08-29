@@ -6,7 +6,7 @@
 /*   By: kasen <kasen@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/10 14:31:13 by kasen             #+#    #+#             */
-/*   Updated: 2026/08/21 19:51:20 by kasen            ###   ########.fr       */
+/*   Updated: 2026/08/28 19:25:06 by kasen            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,12 +37,12 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	alloc[i] = '\0';
 	return (alloc);
 }
-// #include "stdio.h"
+#include "stdio.h"
 
-// int	main(void)
-// {
-// 	char	*s;
+int	main(void)
+{
+	char	*s;
 
-// 	s = ft_substr("tripouille", 1, 1);
-// 	printf("%s", s);
-// }
+	s = ft_substr("42", 400, 0);
+	printf("%s", s);
+}
