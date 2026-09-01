@@ -6,11 +6,7 @@
 /*   By: kasen <kasen@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/10 14:31:13 by kasen             #+#    #+#             */
-<<<<<<< HEAD
-/*   Updated: 2026/08/30 10:44:16 by kasen            ###   ########.fr       */
-=======
-/*   Updated: 2026/08/28 19:25:06 by kasen            ###   ########.fr       */
->>>>>>> refs/remotes/origin/main
+/*   Updated: 2026/09/01 07:59:11 by kasen            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,15 +37,3 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	alloc[i] = '\0';
 	return (alloc);
 }
-<<<<<<< HEAD
-=======
-#include "stdio.h"
-
-int	main(void)
-{
-	char	*s;
-
-	s = ft_substr("42", 400, 0);
-	printf("%s", s);
-}
->>>>>>> refs/remotes/origin/main
