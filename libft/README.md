@@ -92,6 +92,7 @@ Compile the static library `libft.a` using the provided `Makefile` with `cc` and
 ```bash
 # Compile mandatory functions into libft.a
 make
+# or: make all
 
 # Remove object files (.o)
 make clean
