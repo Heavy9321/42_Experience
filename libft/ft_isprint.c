@@ -6,11 +6,9 @@
 /*   By: kasen <kasen@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/03 18:53:44 by kasen             #+#    #+#             */
-/*   Updated: 2026/08/16 18:37:08 by kasen            ###   ########.fr       */
+/*   Updated: 2026/08/31 14:11:29 by kasen            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "libft.h"
 
 int	ft_isprint(int c)
 {

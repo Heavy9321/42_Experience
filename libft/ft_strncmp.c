@@ -6,7 +6,7 @@
 /*   By: kasen <kasen@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/05 16:54:12 by kasen             #+#    #+#             */
-/*   Updated: 2026/08/20 20:27:12 by kasen            ###   ########.fr       */
+/*   Updated: 2026/08/28 00:18:45 by kasen            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	unsigned int	a;
+	size_t	a;
 
 	a = 0;
 	if (n == 0)

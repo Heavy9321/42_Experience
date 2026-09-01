@@ -6,11 +6,9 @@
 /*   By: kasen <kasen@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/05 16:39:12 by kasen             #+#    #+#             */
-/*   Updated: 2026/08/20 20:19:05 by kasen            ###   ########.fr       */
+/*   Updated: 2026/08/31 14:37:23 by kasen            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "libft.h"
 
 int	ft_tolower(int c)
 {

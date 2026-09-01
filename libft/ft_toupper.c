@@ -6,11 +6,9 @@
 /*   By: kasen <kasen@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/03 19:06:32 by kasen             #+#    #+#             */
-/*   Updated: 2026/08/20 20:19:08 by kasen            ###   ########.fr       */
+/*   Updated: 2026/08/31 14:32:25 by kasen            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "libft.h"
 
 int	ft_toupper(int c)
 {

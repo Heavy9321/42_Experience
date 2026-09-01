@@ -6,17 +6,15 @@
 /*   By: kasen <kasen@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/10 14:22:54 by kasen             #+#    #+#             */
-/*   Updated: 2026/08/12 16:48:00 by kasen            ###   ########.fr       */
+/*   Updated: 2026/08/31 14:53:37 by kasen            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-
 int	ft_atoi(const char *str)
 {
-	int	sign;
-	int	i;
-	int	number;
+	int		sign;
+	int		i;
+	long	number;
 
 	sign = 1;
 	i = 0;

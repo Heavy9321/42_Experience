@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                       :::      ::::::::    */
-/*   ft_memcmp.c                                       :+:      :+:    :+:    */
-/*                                                   +:+ +:+         +:+      */
-/*   By: kasen <kasen@student.42istanbul.com.tr>   #+#  +:+       +#+         */
-/*                                               +#+#+#+#+#+   +#+            */
-/*   Created: 2026/08/10 14:29:16 by kasen            #+#    #+#              */
-/*   Updated: 2026/08/11 18:28:14 by kasen           ###   ########.fr        */
+/*                                                        :::      ::::::::   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: kasen <kasen@student.42istanbul.com.tr>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/08/10 14:29:16 by kasen             #+#    #+#             */
+/*   Updated: 2026/08/27 14:49:54 by kasen            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	unsigned char	*str1;
-	unsigned char	*str2;
-	size_t			i;
+	const unsigned char	*str1;
+	const unsigned char	*str2;
+	size_t				i;
 
 	str1 = (unsigned char *) s1;
 	str2 = (unsigned char *) s2;

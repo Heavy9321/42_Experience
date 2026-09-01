@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                       :::      ::::::::    */
-/*   ft_memchr.c                                       :+:      :+:    :+:    */
-/*                                                   +:+ +:+         +:+      */
-/*   By: kasen <kasen@student.42istanbul.com.tr>   #+#  +:+       +#+         */
-/*                                               +#+#+#+#+#+   +#+            */
-/*   Created: 2026/08/10 14:22:45 by kasen            #+#    #+#              */
-/*   Updated: 2026/08/11 18:28:13 by kasen           ###   ########.fr        */
+/*                                                        :::      ::::::::   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: kasen <kasen@student.42istanbul.com.tr>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/08/10 14:22:45 by kasen             #+#    #+#             */
+/*   Updated: 2026/08/31 14:33:48 by kasen            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {
-	unsigned char	*str;
-	unsigned char	num;
-	size_t			i;
+	const unsigned char	*str;
+	unsigned char		num;
+	size_t				i;
 
 	str = (unsigned char *) s;
 	num = (unsigned char) c;

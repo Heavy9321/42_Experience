@@ -6,7 +6,7 @@
 /*   By: kasen <kasen@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/10 14:28:33 by kasen             #+#    #+#             */
-/*   Updated: 2026/08/25 10:14:28 by kasen            ###   ########.fr       */
+/*   Updated: 2026/08/31 14:31:14 by kasen            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char	*ft_strdup(const char *s1)
 {
-	int		i;
+	size_t	i;
 	char	*str;
 
 	if (!s1)

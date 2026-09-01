@@ -6,7 +6,7 @@
 /*   By: kasen <kasen@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/13 03:47:12 by kasen             #+#    #+#             */
-/*   Updated: 2026/08/20 19:56:09 by kasen            ###   ########.fr       */
+/*   Updated: 2026/08/31 14:31:43 by kasen            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,13 @@
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	char			*alloc;
-	unsigned int	i;
+	char	*alloc;
+	size_t	i;
 
 	if (!s || !f)
 		return (NULL);
 	i = 0;
-	alloc = (char *) malloc(((ft_strlen(s) + 1) * sizeof(char)));
+	alloc = malloc(((ft_strlen(s) + 1) * sizeof(char)));
 	if (!alloc)
 		return (NULL);
 	while (s[i] != '\0')
