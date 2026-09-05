@@ -6,7 +6,7 @@
 /*   By: kasen <kasen@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/10 14:30:03 by kasen             #+#    #+#             */
-/*   Updated: 2026/09/01 08:04:51 by kasen            ###   ########.fr       */
+/*   Updated: 2026/09/01 19:26:07 by kasen            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,16 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	size_t			i;
-	unsigned char	uc;
+	size_t	i;
+	char	uc;
 
 	if (!s)
 		return (NULL);
-	uc = (unsigned char) c;
+	uc = (char) c;
 	i = ft_strlen(s);
 	while (1)
 	{
-		if ((unsigned char) s[i] == uc)
+		if (s[i] == uc)
 			return ((char *) & s[i]);
 		if (i == 0)
 			break ;
