@@ -6,7 +6,7 @@
 /*   By: kasen <kasen@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/12 15:28:45 by kasen             #+#    #+#             */
-/*   Updated: 2026/09/12 20:11:34 by kasen            ###   ########.fr       */
+/*   Updated: 2026/09/14 17:28:14 by kasen            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ int	ft_putnbr_hex(unsigned int nb, char *hex_base)
 			return (-1);
 		len += temp;
 	}
-	if (write(1, &hex_base[nb % 10], 1) == -1)
+	if (write(1, &hex_base[nb % 16], 1) == -1)
 		return (-1);
 	len += 1;
 	return (len);
@@ -71,10 +71,12 @@ int	ft_putpntr(void *ptr)
 
 	len = 0;
 	temp = 0;
-	if (ft_putsr("0x") == -1)
+	if (!ptr)
+		return (write(1, "(nil)", 5));
+	if (write(1, "(nil)", 2) == -1)
 		return (-1);
 	len = len + 2;
-	temp = ft_putnbr_hex((unsigned long) ptr, 'x');
+	temp = ft_putnbr_hex((unsigned long) ptr, "0123456789abcdef");
 	if (temp == -1)
 		return (-1);
 	len += temp;
@@ -86,13 +88,9 @@ int	ft_putstr(char *s1)
 	int	len;
 
 	if (!s1)
-	{
-		if (write(1, "(NULL)", 7) == -1)
-			return (-1);
-		return (7);
-	}
-	len = 0;
-	while (s1 != '\0')
+		if (write(1, "(null)", 6))
+		len = 0;
+	while (*s1)
 	{
 		if (write(1, s1, 1) == -1)
 			return (-1);

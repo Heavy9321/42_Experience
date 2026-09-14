@@ -6,7 +6,7 @@
 /*   By: kasen <kasen@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/12 15:28:47 by kasen             #+#    #+#             */
-/*   Updated: 2026/09/12 20:36:50 by kasen            ###   ########.fr       */
+/*   Updated: 2026/09/14 16:59:09 by kasen            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <unistd.h>
 
 int	ft_printf(const char *, ...);
+int	ft_hub(const char c, va_list *varg);
 int	ft_putchar(char s);
 int	ft_putnbr(long nb);
 int	ft_putnbr_hex(unsigned int nb, char *hex_base);

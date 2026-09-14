@@ -6,13 +6,15 @@
 /*   By: kasen <kasen@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/12 15:40:33 by kasen             #+#    #+#             */
-/*   Updated: 2026/09/12 19:50:13 by kasen            ###   ########.fr       */
+/*   Updated: 2026/09/14 16:52:26 by kasen            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+#include <stdio.h>
 
 int	main(void)
 {
-	ft_putnbr_hex(23, "0123456789abcdef");
+	ft_printf("c:%c|s:%s|p:%p|d:%d|i:%i|u:%u|x:%x|X:%X|%%:%%|null_s:%s|nil_p:%p\n", 'A', "test", &main, -42, 42, 4294967295U, 255, 255, (char *) 0, (void *) 0);
+	return (0);
 }
