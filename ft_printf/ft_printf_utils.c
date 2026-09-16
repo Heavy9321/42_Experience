@@ -6,7 +6,7 @@
 /*   By: kasen <kasen@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/12 15:28:45 by kasen             #+#    #+#             */
-/*   Updated: 2026/09/14 17:28:14 by kasen            ###   ########.fr       */
+/*   Updated: 2026/09/15 11:56:28 by kasen            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ int	ft_putpntr(void *ptr)
 	temp = 0;
 	if (!ptr)
 		return (write(1, "(nil)", 5));
-	if (write(1, "(nil)", 2) == -1)
+	if (write(1, "0x", 2) == -1)
 		return (-1);
 	len = len + 2;
 	temp = ft_putnbr_hex((unsigned long) ptr, "0123456789abcdef");

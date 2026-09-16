@@ -1,41 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kasen <kasen@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/09/12 15:28:46 by kasen             #+#    #+#             */
-/*   Updated: 2026/09/15 11:56:29 by kasen            ###   ########.fr       */
+/*   Created: 2026/09/14 19:05:59 by kasen             #+#    #+#             */
+/*   Updated: 2026/09/15 11:56:30 by kasen            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "get_next_line.h"
 
-int	ft_printf(const char *str, ...)
+char	*get_next_line(int fd)
 {
-	va_list	args;
-	int		count;
-	int		i;
-
-	if (!str)
-		return (-1);
-	va_start(args, str);
-	count = 0;
-	i = 0;
-	while (str[i])
-	{
-		if (str[i] == '%' && str[i + 1])
-		{
-			count += ft_hub(str[i + 1], &args);
-			i += 2;
-		}
-		else
-		{
-			count += write(1, &str[i], 1);
-			i++;
-		}
-	}
-	va_end(args);
-	return (count);
 }

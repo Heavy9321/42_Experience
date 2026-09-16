@@ -1,41 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kasen <kasen@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/09/12 15:28:46 by kasen             #+#    #+#             */
-/*   Updated: 2026/09/15 11:56:29 by kasen            ###   ########.fr       */
+/*   Created: 2026/09/14 19:02:45 by kasen             #+#    #+#             */
+/*   Updated: 2026/09/14 23:45:58 by kasen            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#ifndef GET_NEXT_LINE_H
+# define GET_NEXT_LINE_H
 
-int	ft_printf(const char *str, ...)
-{
-	va_list	args;
-	int		count;
-	int		i;
+# include <unistd.h>
+# include <stdlib.h>
 
-	if (!str)
-		return (-1);
-	va_start(args, str);
-	count = 0;
-	i = 0;
-	while (str[i])
-	{
-		if (str[i] == '%' && str[i + 1])
-		{
-			count += ft_hub(str[i + 1], &args);
-			i += 2;
-		}
-		else
-		{
-			count += write(1, &str[i], 1);
-			i++;
-		}
-	}
-	va_end(args);
-	return (count);
-}
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 42
+# endif
+
+char	*get_next_line(int fd);
+
+#endif
