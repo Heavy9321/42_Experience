@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_printf_utils.c                                  :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: kasen <kasen@student.42istanbul.com.tr>    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/09/12 15:28:45 by kasen             #+#    #+#             */
-/*   Updated: 2026/09/15 11:56:28 by kasen            ###   ########.fr       */
+/*                                                       :::      ::::::::    */
+/*   ft_printf_utils.c                                 :+:      :+:    :+:    */
+/*                                                   +:+ +:+         +:+      */
+/*   By: kasen <kasen@student.42istanbul.com.tr>   #+#  +:+       +#+         */
+/*                                               +#+#+#+#+#+   +#+            */
+/*   Created: 2026/09/12 15:28:45 by kasen            #+#    #+#              */
+/*   Updated: 2026/09/16 15:45:01 by kasen           ###   ########.fr        */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ int	ft_putnbr(long nb)
 	return (len);
 }
 
-int	ft_putnbr_hex(unsigned int nb, char *hex_base)
+int	ft_putnbr_hex(long unsigned nb, char *hex_base)
 {
 	int	len;
 	int	temp;
@@ -66,9 +66,11 @@ int	ft_putnbr_hex(unsigned int nb, char *hex_base)
 
 int	ft_putpntr(void *ptr)
 {
-	int	len;
-	int	temp;
+	int				len;
+	int				temp;
+	long unsigned	conv_par;
 
+	conv_par = (long unsigned) ptr;
 	len = 0;
 	temp = 0;
 	if (!ptr)
@@ -76,7 +78,7 @@ int	ft_putpntr(void *ptr)
 	if (write(1, "0x", 2) == -1)
 		return (-1);
 	len = len + 2;
-	temp = ft_putnbr_hex((unsigned long) ptr, "0123456789abcdef");
+	temp = ft_putnbr_hex(conv_par, "0123456789abcdef");
 	if (temp == -1)
 		return (-1);
 	len += temp;
@@ -88,8 +90,8 @@ int	ft_putstr(char *s1)
 	int	len;
 
 	if (!s1)
-		if (write(1, "(null)", 6))
-		len = 0;
+		return (write(1, "(null)", 6));
+	len = 0;
 	while (*s1)
 	{
 		if (write(1, s1, 1) == -1)

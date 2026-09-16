@@ -23,6 +23,6 @@ clean:
 fclean: clean
 	$(RM) $(NAME)
 
-re: fclean allz
+re: fclean all
 
 .PHONY: all clean fclean re
