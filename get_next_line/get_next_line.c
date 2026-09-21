@@ -6,7 +6,7 @@
 /*   By: kasen <kasen@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/14 19:05:59 by kasen             #+#    #+#             */
-/*   Updated: 2026/09/17 04:36:45 by kasen            ###   ########.fr       */
+/*   Updated: 2026/09/21 14:32:30 by kasen            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ char	*read_first(int fd, char *s1)
 	return (s1);
 }
 
-char	*second_string(char *s1)
+char	*extract_line(char *s1)
 {
 	int		i;
 	char	*line;
@@ -57,8 +57,30 @@ char	*second_string(char *s1)
 	return (line);
 }
 
-char	*clean_stash(void)
+char	*clean_stash(char *s2)
 {
+	int		i;
+	int		j;
+	char	*alloc;
+
+	i = 0;
+	if (!s2[i] || !s2)
+		return (NULL);
+	while (s2[i] && s2[i] != '\n')
+		i++;
+	alloc = malloc(gnl_strlen(s2) - i + 1);
+	if (!alloc)
+		return (NULL);
+	j = 0;
+	while (s2[i])
+	{
+		alloc[j] = s2[i];
+		i++;
+		j++;
+	}
+	alloc[j] = '\0';
+	free(s2);
+	return (alloc);
 }
 
 char	*get_next_line(int fd)
