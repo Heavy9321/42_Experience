@@ -6,7 +6,7 @@
 /*   By: kasen <kasen@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/14 19:02:45 by kasen             #+#    #+#             */
-/*   Updated: 2026/09/16 20:35:47 by kasen            ###   ########.fr       */
+/*   Updated: 2026/09/23 21:59:54 by kasen            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@
 char	*get_next_line(int fd);
 char	*gnl_strjoin(char const *s1, char const *s2);
 size_t	gnl_strlen(const char *s);
-char	*gnl_substr(char const *s, unsigned int start, size_t len);
 char	*gnl_strchr(const char *s, int c);
+char	*gnl_strdup(const char *s1);
 
 #endif

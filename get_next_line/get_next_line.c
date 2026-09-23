@@ -6,7 +6,7 @@
 /*   By: kasen <kasen@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/14 19:05:59 by kasen             #+#    #+#             */
-/*   Updated: 2026/09/21 14:32:30 by kasen            ###   ########.fr       */
+/*   Updated: 2026/09/23 23:30:36 by kasen            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ char	*read_first(int fd, char *s1)
 	return (s1);
 }
 
-char	*extract_line(char *s1)
+char	*get_line(char *s1)
 {
 	int		i;
 	char	*line;
@@ -52,7 +52,7 @@ char	*extract_line(char *s1)
 	if (!line)
 		return (NULL);
 	line[i] = '\0';
-	while (i-- >= 0)
+	while (--i >= 0)
 		line[i] = s1[i];
 	return (line);
 }
@@ -64,20 +64,20 @@ char	*clean_stash(char *s2)
 	char	*alloc;
 
 	i = 0;
-	if (!s2[i] || !s2)
+	if (!s2 || !s2[0])
 		return (NULL);
 	while (s2[i] && s2[i] != '\n')
 		i++;
 	alloc = malloc(gnl_strlen(s2) - i + 1);
-	if (!alloc)
+	if (!s2[i] || !alloc)
+	{
+		free(s2);
 		return (NULL);
+	}
+	i++;
 	j = 0;
 	while (s2[i])
-	{
-		alloc[j] = s2[i];
-		i++;
-		j++;
-	}
+		alloc[j++] = s2[i++];
 	alloc[j] = '\0';
 	free(s2);
 	return (alloc);
@@ -85,4 +85,15 @@ char	*clean_stash(char *s2)
 
 char	*get_next_line(int fd)
 {
+	static char	*stash;
+	char		*line;
+
+	if (fd < 0 || BUFFER_SIZE <= 0)
+		return (NULL);
+	stash = read_first(fd, stash);
+	if (!stash)
+		return (NULL);
+	line = get_line(stash);
+	stash = clean_stash(stash);
+	return (line);
 }
