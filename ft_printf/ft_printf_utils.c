@@ -6,7 +6,7 @@
 /*   By: kasen <kasen@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/12 15:28:45 by kasen             #+#    #+#             */
-/*   Updated: 2026/09/21 22:30:20 by kasen            ###   ########.fr       */
+/*   Updated: 2026/09/24 15:41:02 by kasen            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 
 int	ft_putchar(char s)
 {
-	return (write(1, &s, 1));
+	write(1, &s, 1);
+	return (1);
 }
 
 int	ft_putnbr(long nb)
