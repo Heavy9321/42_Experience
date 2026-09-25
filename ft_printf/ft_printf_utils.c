@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: kasen <kasen@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/09/12 15:28:45 by kasen             #+#    #+#             */
-/*   Updated: 2026/09/24 15:41:02 by kasen            ###   ########.fr       */
+/*   Created: 2026/09/25 14:45:52 by kasen             #+#    #+#             */
+/*   Updated: 2026/09/25 14:46:22 by kasen            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,17 +69,20 @@ int	ft_putpntr(void *ptr)
 {
 	int				len;
 	int				temp;
-	long unsigned	conv_par;
+	long unsigned	conv_ptr;
 
-	conv_par = (long unsigned) ptr;
+	conv_ptr = (long unsigned) ptr;
 	len = 0;
 	temp = 0;
 	if (!ptr)
-		return (write(1, "(nil)", 5));
+	{
+		write(1, "(nil)", 5);
+		return (5);
+	}
 	if (write(1, "0x", 2) == -1)
 		return (-1);
 	len = len + 2;
-	temp = ft_putnbr_hex(conv_par, "0123456789abcdef");
+	temp = ft_putnbr_hex(conv_ptr, "0123456789abcdef");
 	if (temp == -1)
 		return (-1);
 	len += temp;
@@ -91,7 +94,10 @@ int	ft_putstr(char *s1)
 	int	len;
 
 	if (!s1)
-		return (write(1, "(null)", 6));
+	{
+		write(1, "(null)", 6);
+		return (6);
+	}
 	len = 0;
 	while (*s1)
 	{
