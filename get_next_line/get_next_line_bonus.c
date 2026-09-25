@@ -1,16 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   get_next_line_bonus.c                              :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: kasen <kasen@student.42istanbul.com.tr>    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/09/25 11:01:30 by kasen             #+#    #+#             */
-/*   Updated: 2026/09/25 14:26:56 by kasen            ###   ########.fr       */
+/*                                                       :::      ::::::::    */
+/*   get_next_line_bonus.c                             :+:      :+:    :+:    */
+/*                                                   +:+ +:+         +:+      */
+/*   By: kasen <kasen@student.42istanbul.com.tr>   #+#  +:+       +#+         */
+/*                                               +#+#+#+#+#+   +#+            */
+/*   Created: 2026/09/25 11:01:30 by kasen            #+#    #+#              */
+/*   Updated: 2026/09/25 15:15:41 by kasen           ###   ########.fr        */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line_bonus.h"
+#include <limits.h>
 
 char	*read_first(int fd, char *s1)
 {
@@ -85,7 +86,7 @@ char	*clean_stash(char *s2)
 
 char	*get_next_line_bonus(int fd)
 {
-	static char	*stash[OPEN_MAX];
+	static char	stash[OPEN_MAX];
 	char		*line;
 
 	if (fd < 0 || BUFFER_SIZE <= 0)
