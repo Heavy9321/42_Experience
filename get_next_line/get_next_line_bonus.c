@@ -1,17 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                       :::      ::::::::    */
-/*   get_next_line_bonus.c                             :+:      :+:    :+:    */
-/*                                                   +:+ +:+         +:+      */
-/*   By: kasen <kasen@student.42istanbul.com.tr>   #+#  +:+       +#+         */
-/*                                               +#+#+#+#+#+   +#+            */
-/*   Created: 2026/09/25 11:01:30 by kasen            #+#    #+#              */
-/*   Updated: 2026/09/25 15:15:41 by kasen           ###   ########.fr        */
+/*                                                        :::      ::::::::   */
+/*   get_next_line_bonus.c                              :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: kasen <kasen@student.42istanbul.com.tr>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/09/25 11:01:30 by kasen             #+#    #+#             */
+/*   Updated: 2026/09/26 23:15:19 by kasen            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line_bonus.h"
-#include <limits.h>
 
 char	*read_first(int fd, char *s1)
 {
@@ -22,7 +21,7 @@ char	*read_first(int fd, char *s1)
 	if (!buffer)
 		return (NULL);
 	i = 1;
-	while (!gnl_bonus_strchr(s1, '\n') && (i > 0))
+	while (!gnl_strchr(s1, '\n') && (i > 0))
 	{
 		i = read(fd, buffer, BUFFER_SIZE);
 		if (i == -1)
@@ -31,7 +30,7 @@ char	*read_first(int fd, char *s1)
 			return (NULL);
 		}
 		buffer[i] = '\0';
-		s1 = gnl_bonus_strjoin(s1, buffer);
+		s1 = gnl_strjoin(s1, buffer);
 	}
 	free(buffer);
 	return (s1);
@@ -69,7 +68,7 @@ char	*clean_stash(char *s2)
 		return (NULL);
 	while (s2[i] && s2[i] != '\n')
 		i++;
-	alloc = malloc(gnl_bonus_strlen(s2) - i + 1);
+	alloc = malloc(gnl_strlen(s2) - i + 1);
 	if (!s2[i] || !alloc)
 	{
 		free(s2);
@@ -84,17 +83,17 @@ char	*clean_stash(char *s2)
 	return (alloc);
 }
 
-char	*get_next_line_bonus(int fd)
+char	*get_next_line(int fd)
 {
-	static char	stash[OPEN_MAX];
+	static char	*stash[FD_MAX];
 	char		*line;
 
-	if (fd < 0 || BUFFER_SIZE <= 0)
+	if (fd < 0 || BUFFER_SIZE <= 0 || fd >= FD_MAX)
 		return (NULL);
-	stash[fd] = read_first(fd, stash);
+	stash[fd] = read_first(fd, stash[fd]);
 	if (!stash[fd])
 		return (NULL);
-	line = get_line(*stash);
-	stash[fd] = clean_stash(*stash);
+	line = get_line(stash[fd]);
+	stash[fd] = clean_stash(stash[fd]);
 	return (line);
 }
