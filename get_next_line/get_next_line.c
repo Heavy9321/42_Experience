@@ -6,7 +6,7 @@
 /*   By: kasen <kasen@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/14 19:05:59 by kasen             #+#    #+#             */
-/*   Updated: 2026/09/23 23:30:36 by kasen            ###   ########.fr       */
+/*   Updated: 2026/09/27 14:40:55 by kasen            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,24 +15,28 @@
 char	*read_first(int fd, char *s1)
 {
 	char	*buffer;
+	char	*tmp;
 	ssize_t	i;
 
 	buffer = malloc(BUFFER_SIZE + 1);
 	if (!buffer)
-		return (NULL);
+		return (free(buffer), free(s1), NULL);
 	i = 1;
-	while (!gnl_strchr(s1, '\n') && (i > 0))
+	while (!gnl_strchr(s1, '\n') && i > 0)
 	{
 		i = read(fd, buffer, BUFFER_SIZE);
 		if (i == -1)
-		{
-			free(buffer);
-			return (NULL);
-		}
+			return (free(buffer), free(s1), NULL);
+		if (i == 0)
+			break ;
 		buffer[i] = '\0';
-		s1 = gnl_strjoin(s1, buffer);
+		tmp = gnl_strjoin(s1, buffer);
+		free(s1);
+		s1 = tmp;
 	}
 	free(buffer);
+	if (!s1 || !s1[0])
+		return (free(s1), NULL);
 	return (s1);
 }
 
@@ -50,7 +54,7 @@ char	*get_line(char *s1)
 		i++;
 	line = malloc(i + 1);
 	if (!line)
-		return (NULL);
+		return (free(s1), NULL);
 	line[i] = '\0';
 	while (--i >= 0)
 		line[i] = s1[i];
@@ -68,12 +72,11 @@ char	*clean_stash(char *s2)
 		return (NULL);
 	while (s2[i] && s2[i] != '\n')
 		i++;
+	if (!s2[i])
+		return (free(s2), NULL);
 	alloc = malloc(gnl_strlen(s2) - i + 1);
-	if (!s2[i] || !alloc)
-	{
-		free(s2);
-		return (NULL);
-	}
+	if (!alloc)
+		return (free(s2), NULL);
 	i++;
 	j = 0;
 	while (s2[i])

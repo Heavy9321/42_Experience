@@ -6,7 +6,7 @@
 /*   By: kasen <kasen@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/25 11:01:49 by kasen             #+#    #+#             */
-/*   Updated: 2026/09/26 22:40:12 by kasen            ###   ########.fr       */
+/*   Updated: 2026/09/27 14:40:52 by kasen            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,14 +49,15 @@ char	*gnl_strjoin(char const *s1, char const *s2)
 
 	if (!s2)
 		return (NULL);
-	if (!s1)
-		s1 = gnl_strdup("");
-	s_len1 = gnl_strlen(s1);
+	s_len1 = 0;
+	if (s1)
+		s_len1 = gnl_strlen(s1);
 	s_len2 = gnl_strlen(s2);
 	alloc = malloc((s_len1 + s_len2 + 1) * sizeof(char));
 	if (!alloc)
 		return (NULL);
-	gnl_memcpy(alloc, s1, s_len1);
+	if (s1)
+		gnl_memcpy(alloc, s1, s_len1);
 	gnl_memcpy(alloc + s_len1, s2, s_len2);
 	alloc[s_len1 + s_len2] = '\0';
 	return (alloc);
@@ -78,24 +79,4 @@ char	*gnl_strchr(const char *s, int c)
 	if (s[i] == (char) c)
 		return ((char *) & s[i]);
 	return (NULL);
-}
-
-char	*gnl_strdup(const char *s1)
-{
-	size_t	i;
-	char	*str;
-
-	if (!s1)
-		return (NULL);
-	str = malloc(gnl_strlen(s1) + 1);
-	i = 0;
-	if (!str)
-		return (NULL);
-	while (s1[i] != '\0')
-	{
-		str[i] = s1[i];
-		i++;
-	}
-	str[i] = '\0';
-	return (str);
 }
