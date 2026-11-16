@@ -6,19 +6,19 @@
 #  By: kasen <kasen@student.42istanbul.com.tr>   +#+  +:+       +#+         #
 #                                              +#+#+#+#+#+   +#+            #
 #  Created: 2026/11/16 15:20:25 by kasen           #+#    #+#               #
-#  Updated: 2026/11/16 23:07:42 by kasen           ###   ########.fr        #
+#  Updated: 2026/11/17 00:49:54 by kasen           ###   ########.fr        #
 #                                                                           #
 # ************************************************************************* #
 
 class Plant:
     def __init__(self, name, height, days):
         self.name = name
-        self._height = height
+        self._height = float(height)
         self._age = days
 
     def show(self):
         b = self.name
-        print(f"Plant Created: {b}: {self._height}cm, {self._age} days old")
+        print(f"Plant created: {b}: {self._height}cm, {self._age} days old")
 
     def get_height(self):
         return self._height
@@ -29,7 +29,7 @@ class Plant:
             print("Height update rejected")
         else:
             self._height = float(new_height)
-            print(f"Height updated: {self._height}")
+            print(f"Height updated: {int(self._height)}cm")
 
     def get_age(self):
         return self._age
@@ -40,7 +40,7 @@ class Plant:
             print("Age update rejected")
         else:
             self._age = new_age
-            print(f"Age updated: {self._age}")
+            print(f"Age updated: {self._age} days")
 
 
 if __name__ == "__main__":
@@ -48,12 +48,12 @@ if __name__ == "__main__":
     plant = Plant("Rose", 15, 10)
     plant.show()
     print()
-    en_age = plant.get_age()
-    en_height = plant.get_height()
     plant.set_height(25)
     plant.set_age(30)
     print()
     plant.set_height(-5)
     plant.set_age(-5)
+    en_age = plant.get_age()
+    en_height = plant.get_height()
     print()
-    plant.show()
+    print(f"Current state: {plant.name}: {en_height}cm, {en_age} days old")
